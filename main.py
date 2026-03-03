@@ -63,7 +63,7 @@ for franchise_name in franchise_names:
                 franchise_age = monthly_franchise_ages[i]
                 
                 # Determine revenue, cost, and setup costs based on aging (up to 9 months, then "Thereafter average")
-                if franchise_age <= 9:
+                if f'Month {franchise_age}' in revenue_row:
                     period_inflow += revenue_row[f'Month {franchise_age}']
                     period_outflow += (expense_row[f'Month {franchise_age}'] +
                                        setup_cost_row[f'Month {franchise_age}'])
